@@ -7,3 +7,15 @@ for x in range(z):
 
     f.write(str(art) + "\n")
     f.close
+
+
+# def main():
+# 	print("初め")
+# 	message()
+# 	print("終わる")
+
+# def message():
+# 	print("こんにちは")
+# 	print("::::::::")
+
+# main()

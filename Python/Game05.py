@@ -1,3 +1,88 @@
+class Character:
+    def __init__(
+        self,
+        title: str,
+        name: str,
+        power_score: int,
+        biography: str
+    ):
+        self.title = title
+        self.name = name
+        self.power_score = power_score
+        self.biography = biography
+
+    @property
+    def full_name(self) -> str:
+        return f'{self.title} {self.name}'
+
+    @property
+    def data(self) -> str:
+        return (
+            f'{self.title} {self.name} | Power score - {self.power_score} -\n'
+            f'{self.biography}'
+        )
+
+
+def ascii_artx():
+    # Y(Height) of ascii-art
+    z = 12
+    for x in range(z):
+
+        hyphens = "_" * (z-x)
+        print(hyphens + "::" * x + hyphens)
+
+def ascii_art():
+    # Y(Height) of ascii-art
+    z = 12
+    for x in range(z):
+
+        hyphens = "~~" * (z-x)
+        print("" * x + " " * x + hyphens)
+
+
+def input_yesno(prompt: str) -> bool:
+    full_prompt = f'{prompt} ([Yes]/No): '
+    while True:
+        answer = input(full_prompt).strip()
+        if answer == '':
+            return True
+
+        answer = answer[0].lower()
+        if answer == 'y':
+            return True
+        if answer == 'n':
+            return False
+        print('ERROR')
+
+
+def main():
+    ascii_artx()
+    ascii_art()
+    if not input_yesno('Are you ready to play'):
+        return
+
+    is_hero = input_yesno('Do you want to be a Hero')
+    print('\nYou have selected', end=' ')
+    if is_hero:
+        print('to be a hero')
+        character = Character('Barbarian', 'Cider', 4854, 'Not much is known about this character')
+    else:
+        print('not to be a hero')
+        character = Character('Lord', 'Cido', 7910, 'Not much is known about this character')
+
+    print("\nYour character's profile:")
+    print(character.data)
+
+
+if __name__ == '__main__':
+    main()
+
+
+
+
+
+
+
 # class Character:
 #     def __init__(
 #         self,

@@ -8,7 +8,6 @@ int main(void)
     printf("Hello, %s", name);
     return 0;
 }
-
 // clang -o hello hello.c
 // ./hello
 // mv hello.c hello2.c
